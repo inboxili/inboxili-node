@@ -1,0 +1,25 @@
+{
+  "name": "@inboxili/node",
+  "version": "0.1.0",
+  "description": "Node.js client for the Inboxili transactional email API",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "files": ["dist", "README.md", "LICENSE", "CHANGELOG.md"],
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "tsc -p tsconfig.test.json && node --test .test-build/test/",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "repository": { "type": "git", "url": "git+https://github.com/inboxili/inboxili-node.git" },
+  "homepage": "https://inboxili.com/integrations/nodejs",
+  "bugs": { "url": "https://github.com/inboxili/inboxili-node/issues" },
+  "keywords": ["email", "transactional-email", "inboxili", "email-api"],
+  "devDependencies": { "@types/node": "^20", "typescript": "^5.4" }
+}
